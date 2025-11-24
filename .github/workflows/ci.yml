@@ -26,6 +26,9 @@ jobs:
       # 3. Instala todas as dependências (incluindo devDependencies)
       - name: Instalar Dependências
         run: npm ci
+        # NOVO PASSO: Garante permissão de execução para o Jest
+      - name: Corrigir Permissão de Execução do Jest
+        run: chmod +x node_modules/.bin/jest
       # 4. Executa os testes
       - name: Rodar Testes
         run: npm test
